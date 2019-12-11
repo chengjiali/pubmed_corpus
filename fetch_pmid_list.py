@@ -1,5 +1,5 @@
 '''
-This is the get_pmid module.
+This is the fetch_pmid_list module.
 
 This module collects all the PMIDs from 1990-present. 
 In total 21,201,991 PMIDs.
