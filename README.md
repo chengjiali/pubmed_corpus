@@ -1,6 +1,6 @@
-# PubMed Data
+# PubMed Corpus
 
-This module is used to download PubTator-annotated PubMed abstracts and convert the bioconcepts (chemical, disease, gene) from raw string into ID (MeSH, gene ID).
+This module is used to download PubTator-annotated PubMed abstracts and convert the bioconcepts (chemical, disease, gene) from raw string into ID (MeSH, CheBI, OMGI, gene ID).
 
 
 ## Data
