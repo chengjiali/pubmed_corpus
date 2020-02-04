@@ -8,8 +8,8 @@ and replaces chemical/disease/gene with their IDs.
 import re
 
 MIN_PMID = 1279087
-pubtator_data = '/scratch/cheng.jial/pubmed/bioconcepts2pubtatorcentral.offset'
-output_path = '/scratch/cheng.jial/pubmed/pmid'
+pubtator_data = '/scratch/cheng.jial/nlp_corpus/pubmed_pubtator/bioconcepts2pubtatorcentral.offset'
+output_path = '/scratch/cheng.jial/nlp_corpus/pubmed_pubtator/pmid'
 
 def sentence_split(text):
     '''Source: https://stackoverflow.com/questions/4576077/python-split-text-on-sentences'''
@@ -153,13 +153,13 @@ def parse_block(lines):
                     new_name = data[5].strip('\n').replace(':', '')        # Format the ID
                     title_replace[int(data[1])] = [int(data[2]), 
                                                    data[3], 
-                                                   (data[4]+new_name).upper()]
+                                                   (data[4][0]+new_name).upper()]
                 # Replace IDs in Abstract
                 if in_abs:
                     new_name = data[5].strip('\n').replace(':', '')        # Format the ID
                     abs_replace[int(data[1])-len_t] = [int(data[2])-len_t, 
                                                        data[3], 
-                                                       (data[4]+new_name).upper()]
+                                                       (data[4][0]+new_name).upper()]
 
             # Replace text with IDs
             new_title    = replace_with_correct_index(pmid, title, title_replace)
